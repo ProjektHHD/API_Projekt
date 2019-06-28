@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+class bestellung {                            //Klass Definition
+	private : 
+		int zahl_essen1;                          //Attribute
+		int zahl_essen2;
+		int zahl_essen3;
+		int zahl_essen4;
+		int zahl_essen5;						  
+	public :
+		void setzeStueckzahl1 (int ein);            //Methode
+		void setzeStueckzahl2 (int ein);
+		void setzeStueckzahl3 (int ein);
+		void setzeStueckzahl4 (int ein);
+		void setzeStueckzahl5 (int ein);
+		int zeigStueckzahl1 (void);
+		int zeigStueckzahl2 (void);
+		int zeigStueckzahl3 (void);
+		int zeigStueckzahl4 (void);
+		int zeigStueckzahl5 (void);
+};
+// Methodendefinition
+void bestellung:: setzeStueckzahl1 (int ein) {
+	this -> zahl_essen1=ein; }
+void bestellung:: setzeStueckzahl2 (int ein) {
+	this -> zahl_essen2=ein; }
+void bestellung:: setzeStueckzahl3 (int ein) {
+	this -> zahl_essen3=ein; }
+void bestellung:: setzeStueckzahl4 (int ein) {
+	this -> zahl_essen4=ein; }
+void bestellung:: setzeStueckzahl5 (int ein) {
+	this -> zahl_essen5=ein; }
+
+int bestellung:: zeigStueckzahl1 (void) {
+	return zahl_essen1; }
+int bestellung:: zeigStueckzahl2 (void) {
+	return zahl_essen2; }
+int bestellung:: zeigStueckzahl3 (void) {
+	return zahl_essen3; }	
+int bestellung:: zeigStueckzahl4 (void) {
+	return zahl_essen4; }
+int bestellung:: zeigStueckzahl5 (void) {
+	return zahl_essen5; }
