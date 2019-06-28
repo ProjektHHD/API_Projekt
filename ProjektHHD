@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{ int a,b,c,d,e;
+	
+	double preis1=a, preis2=b, preis3=c, preis4=d, preis5=e, preis, Gesamtpreis=0;
+	char name1[20]={"essen1"}, name2[20]={"essen2"}, name3[20]={"essen3"}, name4[20]={"essen4"}, name5[20]={"essen5"};
+	int Auswahl, menge;
+	return 0;
+}
