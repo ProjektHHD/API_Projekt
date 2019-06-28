@@ -13,6 +13,27 @@ class essen																																// Klassendeklaration
 	double preisAus(void);
 };
 
+char* essen::nameEin(void)																												//Funktionsdeklaration
+{
+	cout << "Bitte geben Sie den neuen Namen ein." << endl;
+	cin >> name;
+}
+
+char* essen::nameAus(void)
+{
+	return name;
+}
+
+double essen::preisEin(void)
+{
+	cout << "Bitte geben Sie den neuen Preis ein." << endl;
+	cin >> preis;
+}
+
+double essen::preisAus(void)
+{
+	return preis;
+}
 
 int main()																																// Anfang des Hauptprogramms			
 {
