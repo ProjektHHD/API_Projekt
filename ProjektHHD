@@ -48,6 +48,30 @@ int main()																																// Anfang des Hauptprogramms
 		}
 		else if(eingabe==2)																																										
 		{
+			do
+			{
+				cout << "Was moechten Sie bearbeiten?" << endl << "(1) Name\n(2) Preis\n(3) Zurueck\n";			//Name oder Preis auswaehlen
+				cin >> auswahl;
+				if(auswahl==1)
+				{
+					cout << "Welchen Namen moechten Sie aendern?" << endl;														//Namen bearbeiten
+					cin >> auswahl2;
+					if(auswahl2==1)
+					{essen1.nameEin();}
+					else if(auswahl2==2)
+					{essen2.nameEin();}
+					else if(auswahl2==3)
+					{essen3.nameEin();}
+					else if(auswahl2==4)
+					{essen4.nameEin();}
+					else if(auswahl2==5)
+					{essen5.nameEin();}
+				}
+				else if(auswahl==2)
+				{
+				}
+			}
+			while(auswahl!=3);
 		}
 		else if(eingabe==3)																																
 		{
