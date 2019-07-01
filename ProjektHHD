@@ -1,12 +1,22 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
 int main ()
 { int a,b,c,d,e;
 	
-	double preis1=a, preis2=b, preis3=c, preis4=d, preis5=e, preis, Gesamtpreis=0;
+	double preis1=1, preis2=1, preis3=1, preis4=1, preis5=1, preis, Gesamtpreis=0;
 	char name1[20]={"essen1"}, name2[20]={"essen2"}, name3[20]={"essen3"}, name4[20]={"essen4"}, name5[20]={"essen5"};
 	int Auswahl, menge;
-	return 0;
+	int menge1=0, menge2=0, menge3=0, menge4=0, menge5=0;
+	
+	cout << "------------M E N U---------------" << endl;
+	cout <<fixed<<setprecision(2)<<"1. "<< preis1<<" Euro  "<<name1<< endl;
+	cout <<fixed<<setprecision(2)<<"2. "<< preis2<<" Euro  "<<name2<< endl;
+	cout <<fixed<<setprecision(2)<<"3. "<< preis3<<" Euro  "<<name3<< endl;
+	cout <<fixed<<setprecision(2)<<"4. "<< preis4<<" Euro  "<<name4<< endl;
+	cout <<fixed<<setprecision(2)<<"5. "<< preis5<<" Euro  "<<name5<< endl;
+	cout <<"6. Beenden"<<endl;
 }
+
