@@ -18,5 +18,18 @@ int main ()
 	cout <<fixed<<setprecision(2)<<"4. "<< preis4<<" Euro  "<<name4<< endl;
 	cout <<fixed<<setprecision(2)<<"5. "<< preis5<<" Euro  "<<name5<< endl;
 	cout <<"6. Beenden"<<endl;
+	do
+	{
+		cout << "Was moechten Sie bestellen?" << endl;
+		cin >> Auswahl;
+		if (Auswahl !=6){
+		cout << "Wie viele moechten Sie davon kaufen?" << endl;
+		cin >> menge;
+		if(Auswahl ==1) menge1+=menge;
+		else if(Auswahl ==2) menge2+=menge;
+		else if(Auswahl ==3) menge3+=menge;
+		else if(Auswahl ==4) menge4+=menge;
+		else if(Auswahl ==5) menge5+=menge;			}
+	}
+	while(Auswahl !=6);
 }
-
