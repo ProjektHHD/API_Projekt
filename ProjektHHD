@@ -7,7 +7,8 @@ class bestellung {                            //Klass Definition
 		int zahl_essen2;
 		int zahl_essen3;
 		int zahl_essen4;
-		int zahl_essen5;						  
+		int zahl_essen5;
+		int zustand=1; 								
 	public :
 		void setzeStueckzahl1 (int ein);            //Methode
 		void setzeStueckzahl2 (int ein);
@@ -19,9 +20,11 @@ class bestellung {                            //Klass Definition
 		int zeigStueckzahl3 (void);
 		int zeigStueckzahl4 (void);
 		int zeigStueckzahl5 (void);
+		int zeigZustand (void);
 };
+
 // Methodendefinition
-void bestellung:: setzeStueckzahl1 (int ein) {
+void bestellung:: setzeStueckzahl1 (int ein) {    
 	this -> zahl_essen1=ein; }
 void bestellung:: setzeStueckzahl2 (int ein) {
 	this -> zahl_essen2=ein; }
@@ -43,8 +46,11 @@ int bestellung:: zeigStueckzahl4 (void) {
 int bestellung:: zeigStueckzahl5 (void) {
 	return zahl_essen5; }
 
+int bestellung::zeigZustand (void) {
+	return zustand;}
+		
 int main (void) {
-	int a=3, b=4, c=2, d=1, e=5;	                                                              // Bestellung Stückzahl werden von Kunde-Quelltext bekommen. 
+	int a=3, b=4, c=2, d=1, e=5;	 // Bestellung Stückzahl werden von Kunde-Code bekommen. 
 	bestellung Bestellung1, Bestellung2, Bestellung3, Bestellung4, Bestellung5;                  // Instanzierung Objekte
 
 	Bestellung1.setzeStueckzahl1(a);
@@ -84,7 +90,7 @@ int main (void) {
 	cout << "3.             "<<Bestellung3.zeigStueckzahl1()<<"*essen1,  "<< Bestellung3.zeigStueckzahl2()<<"*essen2,  " <<Bestellung3.zeigStueckzahl3()<<"*essen3,  "<<Bestellung3.zeigStueckzahl4()<<"*essen4,  "<<Bestellung3.zeigStueckzahl5()<<"*essen5"<< endl;
 	cout << "4.             "<<Bestellung4.zeigStueckzahl1()<<"*essen1,  "<< Bestellung4.zeigStueckzahl2()<<"*essen2,  " <<Bestellung4.zeigStueckzahl3()<<"*essen3,  "<<Bestellung4.zeigStueckzahl4()<<"*essen4,  "<<Bestellung4.zeigStueckzahl5()<<"*essen5"<< endl;
 	cout << "5.             "<<Bestellung5.zeigStueckzahl1()<<"*essen1,  "<< Bestellung5.zeigStueckzahl2()<<"*essen2,  " <<Bestellung5.zeigStueckzahl3()<<"*essen3,  "<<Bestellung5.zeigStueckzahl4()<<"*essen4,  "<<Bestellung5.zeigStueckzahl5()<<"*essen5"<< endl;
-
+	
 	return 0;
 }
-	
+
