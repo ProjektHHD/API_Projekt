@@ -83,13 +83,15 @@ int main (void) {
 	Bestellung5.setzeStueckzahl4(d);
 	Bestellung5.setzeStueckzahl5(e);
 	
+	cout <<"\nBestellungszustand : " <<endl;            //Zustand
+	cout <<"(1) Bestellt  , (2) in Bearbeitung,  (3) Fertig! Abholbar \n";
 	cout << "\n<Bestellungsliste>\n";                             //Bestellungsliste
-	cout << "Bestellung     Stueckzahl\n";
-	cout << "1.             "<<Bestellung1.zeigStueckzahl1()<<"*essen1,  "<< Bestellung1.zeigStueckzahl2()<<"*essen2,  " <<Bestellung1.zeigStueckzahl3()<<"*essen3,  "<<Bestellung1.zeigStueckzahl4()<<"*essen4,  "<<Bestellung1.zeigStueckzahl5()<<"*essen5"<< endl;
-	cout << "2.             "<<Bestellung2.zeigStueckzahl1()<<"*essen1,  "<< Bestellung2.zeigStueckzahl2()<<"*essen2,  " <<Bestellung2.zeigStueckzahl3()<<"*essen3,  "<<Bestellung2.zeigStueckzahl4()<<"*essen4,  "<<Bestellung2.zeigStueckzahl5()<<"*essen5"<< endl;
-	cout << "3.             "<<Bestellung3.zeigStueckzahl1()<<"*essen1,  "<< Bestellung3.zeigStueckzahl2()<<"*essen2,  " <<Bestellung3.zeigStueckzahl3()<<"*essen3,  "<<Bestellung3.zeigStueckzahl4()<<"*essen4,  "<<Bestellung3.zeigStueckzahl5()<<"*essen5"<< endl;
-	cout << "4.             "<<Bestellung4.zeigStueckzahl1()<<"*essen1,  "<< Bestellung4.zeigStueckzahl2()<<"*essen2,  " <<Bestellung4.zeigStueckzahl3()<<"*essen3,  "<<Bestellung4.zeigStueckzahl4()<<"*essen4,  "<<Bestellung4.zeigStueckzahl5()<<"*essen5"<< endl;
-	cout << "5.             "<<Bestellung5.zeigStueckzahl1()<<"*essen1,  "<< Bestellung5.zeigStueckzahl2()<<"*essen2,  " <<Bestellung5.zeigStueckzahl3()<<"*essen3,  "<<Bestellung5.zeigStueckzahl4()<<"*essen4,  "<<Bestellung5.zeigStueckzahl5()<<"*essen5"<< endl;
+	cout << "Bestellung     Stueckzahl                                             Zustand\n";
+	cout << "1.             "<<Bestellung1.zeigStueckzahl1()<<"*essen1,  "<< Bestellung1.zeigStueckzahl2()<<"*essen2,  " <<Bestellung1.zeigStueckzahl3()<<"*essen3,  "<<Bestellung1.zeigStueckzahl4()<<"*essen4,  "<<Bestellung1.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung1.zeigZustand() <<endl;
+	cout << "2.             "<<Bestellung2.zeigStueckzahl1()<<"*essen1,  "<< Bestellung2.zeigStueckzahl2()<<"*essen2,  " <<Bestellung2.zeigStueckzahl3()<<"*essen3,  "<<Bestellung2.zeigStueckzahl4()<<"*essen4,  "<<Bestellung2.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung2.zeigZustand() <<endl;
+	cout << "3.             "<<Bestellung3.zeigStueckzahl1()<<"*essen1,  "<< Bestellung3.zeigStueckzahl2()<<"*essen2,  " <<Bestellung3.zeigStueckzahl3()<<"*essen3,  "<<Bestellung3.zeigStueckzahl4()<<"*essen4,  "<<Bestellung3.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung3.zeigZustand() <<endl;
+	cout << "4.             "<<Bestellung4.zeigStueckzahl1()<<"*essen1,  "<< Bestellung4.zeigStueckzahl2()<<"*essen2,  " <<Bestellung4.zeigStueckzahl3()<<"*essen3,  "<<Bestellung4.zeigStueckzahl4()<<"*essen4,  "<<Bestellung4.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung4.zeigZustand() <<endl;
+	cout << "5.             "<<Bestellung5.zeigStueckzahl1()<<"*essen1,  "<< Bestellung5.zeigStueckzahl2()<<"*essen2,  " <<Bestellung5.zeigStueckzahl3()<<"*essen3,  "<<Bestellung5.zeigStueckzahl4()<<"*essen4,  "<<Bestellung5.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung5.zeigZustand() <<endl;
 	
 	return 0;
 }
