@@ -69,6 +69,18 @@ int main()																																// Anfang des Hauptprogramms
 				}
 				else if(auswahl==2)
 				{
+					cout << "Welchen Preis moechten Sie aendern?" << endl;															//Preis bearbeiten
+					cin >> auswahl2;
+					if(auswahl2==1)
+					{essen1.preisEin();}
+					if(auswahl2==2)
+					{essen2.preisEin();}
+					if(auswahl2==3)
+					{essen3.preisEin();}
+					if(auswahl2==4)
+					{essen4.preisEin();}
+					if(auswahl2==5)
+					{essen5.preisEin();}
 				}
 			}
 			while(auswahl!=3);
