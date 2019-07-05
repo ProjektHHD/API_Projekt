@@ -98,6 +98,22 @@ int main (void) {
 	cout << "4.             "<<Bestellung4.zeigStueckzahl1()<<"*essen1,  "<< Bestellung4.zeigStueckzahl2()<<"*essen2,  " <<Bestellung4.zeigStueckzahl3()<<"*essen3,  "<<Bestellung4.zeigStueckzahl4()<<"*essen4,  "<<Bestellung4.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung4.zeigZustand() <<endl;
 	cout << "5.             "<<Bestellung5.zeigStueckzahl1()<<"*essen1,  "<< Bestellung5.zeigStueckzahl2()<<"*essen2,  " <<Bestellung5.zeigStueckzahl3()<<"*essen3,  "<<Bestellung5.zeigStueckzahl4()<<"*essen4,  "<<Bestellung5.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung5.zeigZustand() <<endl;
 	
+	cout << "Zustand aendern?\n";     //Zustandsänderung Schleife
+	cout << "(Y) Yes         (N) No\n";
+	cin >> z_aendern;
+	if(z_aendern == 'y') {                                                                       
+		cout << "Wie vielte Bestellung moechten Sie aendern?\n";
+		cin >> x;
+		cout << "In welchem Zustand ist die " << x<<". Bestellung?\n";
+		cin >> y;
+		if (x == 1) Bestellung1.zustandAendern(y);
+		else if (x ==2) Bestellung2.zustandAendern(y);
+		else if (x ==3) Bestellung3.zustandAendern(y);
+		else if (x ==4) Bestellung4.zustandAendern(y);
+		else if (x ==5) Bestellung5.zustandAendern(y);
+		}
+	
+	
 	return 0;
 }
 
