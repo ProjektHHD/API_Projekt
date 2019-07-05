@@ -45,6 +45,13 @@ int main()																																// Anfang des Hauptprogramms
 		cin >> eingabe;
 		if(eingabe==1)
 		{
+				cout << endl << "Preis       Name" << endl;
+			cout << fixed << setprecision(2) << essen1.preisAus() << "Euro    " << essen1.nameAus() << endl;	//Ausgabe des Menues
+			cout << fixed << setprecision(2) << essen2.preisAus() << "Euro    " << essen2.nameAus() << endl;
+			cout << fixed << setprecision(2) << essen3.preisAus() << "Euro    " << essen3.nameAus() << endl;
+			cout << fixed << setprecision(2) << essen4.preisAus() << "Euro    " << essen4.nameAus() << endl;
+			cout << fixed << setprecision(2) << essen5.preisAus() << "Euro    " << essen5.nameAus() << endl;
+			cout << endl;
 		}
 		else if(eingabe==2)																																										
 		{
