@@ -31,5 +31,20 @@ int main ()
 		else if(Auswahl ==4) menge4+=menge;
 		else if(Auswahl ==5) menge5+=menge;			}
 	}
-	while(Auswahl !=6);
+	while(Auswahl !=6); //2.2.1
+	
+
+	cout << "Bestellte Produkte:" << endl;
+		if (menge1 !=0){
+			cout << name1 << " " << menge1 << " Stueck"<<endl;}
+		if (menge2!=0){
+			cout << name2 << " " << menge2 << " Stueck"<<endl;}
+		if (menge3!=0){
+			cout << name3 << " " << menge3 << " Stueck"<<endl;}
+		if (menge4!=0){
+			cout << name4 << " " << menge4 << " Stueck"<<endl;}
+		if (menge5!=0){
+			cout << name5 << " " << menge5 << " Stueck"<<endl;} //2.2.2
+
+return 0;
 }
