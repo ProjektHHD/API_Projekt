@@ -8,7 +8,7 @@ class bestellung {                            //Klass Definition
 		int zahl_essen3;
 		int zahl_essen4;
 		int zahl_essen5;
-		int zustand=1; 								
+		int zustand=1;
 	public :
 		void setzeStueckzahl1 (int ein);            //Methode
 		void setzeStueckzahl2 (int ein);
@@ -20,11 +20,12 @@ class bestellung {                            //Klass Definition
 		int zeigStueckzahl3 (void);
 		int zeigStueckzahl4 (void);
 		int zeigStueckzahl5 (void);
+		void zustandAendern (int zustand);
 		int zeigZustand (void);
 };
 
 // Methodendefinition
-void bestellung:: setzeStueckzahl1 (int ein) {    
+void bestellung:: setzeStueckzahl1 (int ein) {
 	this -> zahl_essen1=ein; }
 void bestellung:: setzeStueckzahl2 (int ein) {
 	this -> zahl_essen2=ein; }
@@ -46,11 +47,15 @@ int bestellung:: zeigStueckzahl4 (void) {
 int bestellung:: zeigStueckzahl5 (void) {
 	return zahl_essen5; }
 
+void bestellung:: zustandAendern (int zustand) {       //Statusänderung Methode
+	this-> zustand = zustand; }
 int bestellung::zeigZustand (void) {
 	return zustand;}
 		
 int main (void) {
 	int a=3, b=4, c=2, d=1, e=5;	 // Bestellung Stückzahl werden von Kunde-Code bekommen. 
+	int x, y;  //Bei Zustandsänderung
+	char z_aendern;
 	bestellung Bestellung1, Bestellung2, Bestellung3, Bestellung4, Bestellung5;                  // Instanzierung Objekte
 
 	Bestellung1.setzeStueckzahl1(a);
