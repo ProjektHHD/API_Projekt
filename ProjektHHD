@@ -47,7 +47,7 @@ int main()																													// Anfang des Hauptprogramms
 		cout << "Bitte geben Sie das Passwort ein." << endl;																//Passwortsabfrage
 		cout << "(Das Passwort lautet " << passwort << ")" << endl;															//<- Diese Zeile ist nur dafuer da, dass Sie mein Programm verwenden koennen. In
 		cin >> passworteingabe;																								//     dem eigentlichen Programm, wuerde sie natuerlich geloescht werden.
-		for(int i=0; passworteingabe[i]!=0; i++)
+		for(int i=0; passworteingabe[i]!=0 || passwort[i]!=0; i++)
 		{
 			if(passwort[i]!=passworteingabe[i])
 			{
