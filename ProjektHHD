@@ -35,9 +35,30 @@ double essen::preisAus(void)
 	return preis;
 }
 
-int main()																																// Anfang des Hauptprogramms			
+int main()																													// Anfang des Hauptprogramms			
 {
-	int eingabe;
+	char passwort[100]={"passwort"}, passworteingabe[100];																	//Deklaration der Passwortsvariablen
+	bool passwortrichtig=true;
+	int eingabe, auswahl, auswahl2;
+	essen essen1, essen2, essen3, essen4, essen5;
+	do
+	{
+		passwortrichtig=true;
+		cout << "Bitte geben Sie das Passwort ein." << endl;																//Passwortsabfrage
+		cout << "(Das Passwort lautet " << passwort << ")" << endl;															//<- Diese Zeile ist nur dafuer da, dass Sie mein Programm verwenden koennen. In
+		cin >> passworteingabe;																								//     dem eigentlichen Programm, wuerde sie natuerlich geloescht werden.
+		for(int i=0; passworteingabe[i]!=0; i++)
+		{
+			if(passwort[i]!=passworteingabe[i])
+			{
+				passwortrichtig=false;
+			}
+		}
+		if(passwortrichtig==false)
+		{cout << "Das Passwort ist nicht korrekt." << endl;}
+	}
+	while(passwortrichtig==false);
+
 	do
 	{
 		cout << "Was wollen Sie tun?" << endl;
