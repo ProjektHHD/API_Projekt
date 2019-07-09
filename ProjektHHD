@@ -11,6 +11,8 @@ int main ()
 	int Auswahl, menge;
 	int menge1=0, menge2=0, menge3=0, menge4=0, menge5=0;
 	
+	char choice='y';
+	
 	cout << "------------M E N U---------------" << endl;
 	cout <<fixed<<setprecision(2)<<"1. "<< preis1<<" Euro  "<<name1<< endl;
 	cout <<fixed<<setprecision(2)<<"2. "<< preis2<<" Euro  "<<name2<< endl;
@@ -18,6 +20,8 @@ int main ()
 	cout <<fixed<<setprecision(2)<<"4. "<< preis4<<" Euro  "<<name4<< endl;
 	cout <<fixed<<setprecision(2)<<"5. "<< preis5<<" Euro  "<<name5<< endl;
 	cout <<"6. Beenden"<<endl;
+	
+	do{
 	do
 	{
 		cout << "Was moechten Sie bestellen?" << endl;
@@ -46,5 +50,12 @@ int main ()
 		if (menge5!=0){
 			cout << name5 << " " << menge5 << " Stueck"<<endl;} //2.2.2
 
-return 0;
+	do {
+        cout<< "Haben Sie alles richtig bestellt?(Y/N)" << endl;
+        cin >> choice;
+	}while(choice !='y' && choice!='Y' && choice !='n' && choice!='N');
+		
+}while (choice !='y' && choice!='Y');
+
+	return 0;
 }
