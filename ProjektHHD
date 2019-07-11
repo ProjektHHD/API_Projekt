@@ -28,12 +28,23 @@ int main ()
 		cin >> Auswahl;
 		if (Auswahl !=6){
 		cout << "Wie viele moechten Sie davon kaufen?" << endl;
-		cin >> menge;
-		if(Auswahl ==1) menge1+=menge;
-		else if(Auswahl ==2) menge2+=menge;
-		else if(Auswahl ==3) menge3+=menge;
-		else if(Auswahl ==4) menge4+=menge;
-		else if(Auswahl ==5) menge5+=menge;			}
+		cin >> menge;}
+		if(Auswahl ==1) {
+			menge1+=menge;
+			preis=preis1*menge;}
+		else if(Auswahl ==2){
+			menge2+=menge;
+			preis=preis2*menge;}
+		else if(Auswahl ==3) {
+			menge3+=menge;
+			preis=preis3*menge;}
+		else if(Auswahl ==4) {
+			menge4+=menge;
+			preis=preis4*menge;}
+		else if(Auswahl ==5) {
+			menge5+=menge;
+			preis=preis5*menge;	}
+			Gesamtpreis += preis;       //2.4.1           1. 2.4.1 -> 2. 2.4.2 ->BUG FIX
 	}
 	while(Auswahl !=6); //2.2.1
 	
@@ -57,5 +68,8 @@ int main ()
 		
 }while (choice !='y' && choice!='Y');
 
+
+
 	return 0;
 }
+			
