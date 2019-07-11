@@ -58,35 +58,35 @@ int main (void) {
 	int z_aendern;
 	bestellung Bestellung1, Bestellung2, Bestellung3, Bestellung4, Bestellung5;                  // Instanzierung Objekte
 
-	Bestellung1.setzeStueckzahl1(a);
-	Bestellung1.setzeStueckzahl2(b);
-	Bestellung1.setzeStueckzahl3(c);
-	Bestellung1.setzeStueckzahl4(d);
-	Bestellung1.setzeStueckzahl5(e);
+	Bestellung1.setzeStueckzahl1(1);                //Für TEST; alle Bestellungsstückzahl 1,2,3,4,5 setzen
+	Bestellung1.setzeStueckzahl2(1);
+	Bestellung1.setzeStueckzahl3(1);
+	Bestellung1.setzeStueckzahl4(1);
+	Bestellung1.setzeStueckzahl5(1);
 	
-	Bestellung2.setzeStueckzahl1(a);
-	Bestellung2.setzeStueckzahl2(b);
-	Bestellung2.setzeStueckzahl3(c);
-	Bestellung2.setzeStueckzahl4(d);
-	Bestellung2.setzeStueckzahl5(e);
+	Bestellung2.setzeStueckzahl1(2);
+	Bestellung2.setzeStueckzahl2(2);
+	Bestellung2.setzeStueckzahl3(2);
+	Bestellung2.setzeStueckzahl4(2);
+	Bestellung2.setzeStueckzahl5(2);
 	
-	Bestellung3.setzeStueckzahl1(a);
-	Bestellung3.setzeStueckzahl2(b);
-	Bestellung3.setzeStueckzahl3(c);
-	Bestellung3.setzeStueckzahl4(d);
-	Bestellung3.setzeStueckzahl5(e);
+	Bestellung3.setzeStueckzahl1(3);
+	Bestellung3.setzeStueckzahl2(3);
+	Bestellung3.setzeStueckzahl3(3);
+	Bestellung3.setzeStueckzahl4(3);
+	Bestellung3.setzeStueckzahl5(3);
 	
-	Bestellung4.setzeStueckzahl1(a);
-	Bestellung4.setzeStueckzahl2(b);
-	Bestellung4.setzeStueckzahl3(c);
-	Bestellung4.setzeStueckzahl4(d);
-	Bestellung4.setzeStueckzahl5(e);
+	Bestellung4.setzeStueckzahl1(4);
+	Bestellung4.setzeStueckzahl2(4);
+	Bestellung4.setzeStueckzahl3(4);
+	Bestellung4.setzeStueckzahl4(4);
+	Bestellung4.setzeStueckzahl5(4);
 	
-	Bestellung5.setzeStueckzahl1(a);
-	Bestellung5.setzeStueckzahl2(b);
-	Bestellung5.setzeStueckzahl3(c);
-	Bestellung5.setzeStueckzahl4(d);
-	Bestellung5.setzeStueckzahl5(e);
+	Bestellung5.setzeStueckzahl1(5);
+	Bestellung5.setzeStueckzahl2(5);
+	Bestellung5.setzeStueckzahl3(5);
+	Bestellung5.setzeStueckzahl4(5);
+	Bestellung5.setzeStueckzahl5(5);
 	
 	cout <<"\nBestellungszustand : " <<endl;            //Zustand
 	cout <<"(1) Bestellt  , (2) in Bearbeitung,  (3) Fertig! Abholbar \n";
@@ -122,6 +122,141 @@ int main (void) {
 		}	
 	}while(z_aendern !=2);        //Koch wird wieder gefragt, ob er noch einen anderen Zustand ändern will, bis er "nein" wählt.
 	
+	for(int i=0; i<5; i++) {
+		int j, k;
+		if(Bestellung1.zeigZustand() < Bestellung2.zeigZustand()) {        //Bestellung1<->Bestellung2
+			j=Bestellung1.zeigStueckzahl1();                                            //wenn Bestellungszustand von Bestellung2 höher als 1.
+			k=Bestellung2.zeigStueckzahl1();                                           //Bestellung1 steht immer ganz vorne!!
+			Bestellung1.setzeStueckzahl1(k);
+			Bestellung2.setzeStueckzahl1(j);
+			
+			j=Bestellung1.zeigStueckzahl2(); 
+			k=Bestellung2.zeigStueckzahl2();
+			Bestellung1.setzeStueckzahl2(k);
+			Bestellung2.setzeStueckzahl2(j);
+			
+			j=Bestellung1.zeigStueckzahl3(); 
+			k=Bestellung2.zeigStueckzahl3();
+			Bestellung1.setzeStueckzahl3(k);
+			Bestellung2.setzeStueckzahl3(j);
+			
+			j=Bestellung1.zeigStueckzahl4(); 
+			k=Bestellung2.zeigStueckzahl4();
+			Bestellung1.setzeStueckzahl4(k);
+			Bestellung2.setzeStueckzahl4(j);
+			
+			j=Bestellung1.zeigStueckzahl5(); 
+			k=Bestellung2.zeigStueckzahl5();
+			Bestellung1.setzeStueckzahl5(k);
+			Bestellung2.setzeStueckzahl5(j);
+			
+			j=Bestellung1.zeigZustand(); 
+			k=Bestellung2.zeigZustand();
+			Bestellung1.zustandAendern(k);
+			Bestellung2.zustandAendern(j);}
+			
+		if(Bestellung2.zeigZustand() < Bestellung3.zeigZustand()) {        //Bestellung2<->Bestellung3
+			j=Bestellung2.zeigStueckzahl1(); 
+			k=Bestellung3.zeigStueckzahl1();
+			Bestellung2.setzeStueckzahl1(k);
+			Bestellung3.setzeStueckzahl1(j); 
+			
+			j=Bestellung2.zeigStueckzahl2(); 
+			k=Bestellung3.zeigStueckzahl2();
+			Bestellung2.setzeStueckzahl2(k);
+			Bestellung3.setzeStueckzahl2(j); 
+			
+			j=Bestellung2.zeigStueckzahl3(); 
+			k=Bestellung3.zeigStueckzahl3();
+			Bestellung2.setzeStueckzahl3(k);
+			Bestellung3.setzeStueckzahl3(j); 
+			
+			j=Bestellung2.zeigStueckzahl4(); 
+			k=Bestellung3.zeigStueckzahl4();
+			Bestellung2.setzeStueckzahl4(k);
+			Bestellung3.setzeStueckzahl4(j); 
+			
+			j=Bestellung2.zeigStueckzahl5(); 
+			k=Bestellung3.zeigStueckzahl5();
+			Bestellung2.setzeStueckzahl5(k);
+			Bestellung3.setzeStueckzahl5(j); 
+			
+			j=Bestellung2.zeigZustand(); 
+			k=Bestellung3.zeigZustand();
+			Bestellung2.zustandAendern(k);
+			Bestellung3.zustandAendern(j);}
+			
+		if(Bestellung3.zeigZustand() < Bestellung4.zeigZustand()) {        //Bestellung3<->Bestellung4
+			j=Bestellung3.zeigStueckzahl1(); 
+			k=Bestellung4.zeigStueckzahl1();
+			Bestellung3.setzeStueckzahl1(k);
+			Bestellung4.setzeStueckzahl1(j);
+
+			j=Bestellung3.zeigStueckzahl2(); 
+			k=Bestellung4.zeigStueckzahl2();
+			Bestellung3.setzeStueckzahl2(k);
+			Bestellung4.setzeStueckzahl2(j);
+			
+			j=Bestellung3.zeigStueckzahl3(); 
+			k=Bestellung4.zeigStueckzahl3();
+			Bestellung3.setzeStueckzahl3(k);
+			Bestellung4.setzeStueckzahl3(j);
+			
+			j=Bestellung3.zeigStueckzahl4(); 
+			k=Bestellung4.zeigStueckzahl4();
+			Bestellung3.setzeStueckzahl4(k);
+			Bestellung4.setzeStueckzahl4(j);
+			
+			j=Bestellung3.zeigStueckzahl5(); 
+			k=Bestellung4.zeigStueckzahl5();
+			Bestellung3.setzeStueckzahl5(k);
+			Bestellung4.setzeStueckzahl5(j);
+			
+			j=Bestellung3.zeigZustand(); 
+			k=Bestellung4.zeigZustand();
+			Bestellung3.zustandAendern(k);
+			Bestellung4.zustandAendern(j);}
+			
+		if(Bestellung4.zeigZustand() < Bestellung5.zeigZustand()) {        //Bestellung4<->Bestellung5
+			j=Bestellung4.zeigStueckzahl1(); 
+			k=Bestellung5.zeigStueckzahl1();
+			Bestellung4.setzeStueckzahl1(k);
+			Bestellung5.setzeStueckzahl1(j); 
+			
+			j=Bestellung4.zeigStueckzahl2(); 
+			k=Bestellung5.zeigStueckzahl2();
+			Bestellung4.setzeStueckzahl2(k);
+			Bestellung5.setzeStueckzahl2(j); 
+			
+			j=Bestellung4.zeigStueckzahl3(); 
+			k=Bestellung5.zeigStueckzahl3();
+			Bestellung4.setzeStueckzahl3(k);
+			Bestellung5.setzeStueckzahl3(j); 
+			
+			j=Bestellung4.zeigStueckzahl4(); 
+			k=Bestellung5.zeigStueckzahl4();
+			Bestellung4.setzeStueckzahl4(k);
+			Bestellung5.setzeStueckzahl4(j); 
+			
+			j=Bestellung4.zeigStueckzahl5(); 
+			k=Bestellung5.zeigStueckzahl5();
+			Bestellung4.setzeStueckzahl5(k);
+			Bestellung5.setzeStueckzahl5(j); 
+			
+			j=Bestellung4.zeigZustand(); 
+			k=Bestellung5.zeigZustand();
+			Bestellung4.zustandAendern(k);
+			Bestellung5.zustandAendern(j);}
+		}
+	
+	cout << "\n<Bestellungsliste>\n";
+			cout << "Bestellung     Stueckzahl                                             Zustand\n";
+			cout << "1.             "<<Bestellung1.zeigStueckzahl1()<<"*essen1,  "<< Bestellung1.zeigStueckzahl2()<<"*essen2,  " <<Bestellung1.zeigStueckzahl3()<<"*essen3,  "<<Bestellung1.zeigStueckzahl4()<<"*essen4,  "<<Bestellung1.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung1.zeigZustand() <<endl;
+			cout << "2.             "<<Bestellung2.zeigStueckzahl1()<<"*essen1,  "<< Bestellung2.zeigStueckzahl2()<<"*essen2,  " <<Bestellung2.zeigStueckzahl3()<<"*essen3,  "<<Bestellung2.zeigStueckzahl4()<<"*essen4,  "<<Bestellung2.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung2.zeigZustand() <<endl;
+			cout << "3.             "<<Bestellung3.zeigStueckzahl1()<<"*essen1,  "<< Bestellung3.zeigStueckzahl2()<<"*essen2,  " <<Bestellung3.zeigStueckzahl3()<<"*essen3,  "<<Bestellung3.zeigStueckzahl4()<<"*essen4,  "<<Bestellung3.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung3.zeigZustand() <<endl;
+			cout << "4.             "<<Bestellung4.zeigStueckzahl1()<<"*essen1,  "<< Bestellung4.zeigStueckzahl2()<<"*essen2,  " <<Bestellung4.zeigStueckzahl3()<<"*essen3,  "<<Bestellung4.zeigStueckzahl4()<<"*essen4,  "<<Bestellung4.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung4.zeigZustand() <<endl;
+			cout << "5.             "<<Bestellung5.zeigStueckzahl1()<<"*essen1,  "<< Bestellung5.zeigStueckzahl2()<<"*essen2,  " <<Bestellung5.zeigStueckzahl3()<<"*essen3,  "<<Bestellung5.zeigStueckzahl4()<<"*essen4,  "<<Bestellung5.zeigStueckzahl5()<<"*essen5"<< "   " << Bestellung5.zeigZustand() <<endl;
+		
 	
 	return 0;
 }
