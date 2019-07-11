@@ -55,7 +55,7 @@ int bestellung::zeigZustand (void) {
 int main (void) {
 	int a=3, b=4, c=2, d=1, e=5;	 // Bestellung Stückzahl werden von Kunde-Code bekommen. 
 	int x, y;  //Bei Zustandsänderung
-	char z_aendern;
+	int z_aendern;
 	bestellung Bestellung1, Bestellung2, Bestellung3, Bestellung4, Bestellung5;                  // Instanzierung Objekte
 
 	Bestellung1.setzeStueckzahl1(a);
@@ -102,7 +102,7 @@ int main (void) {
 		cout << "\nZustand aendern?\n";     //Zustandsänderung Schleife
 		cout << "(1) Yes         (2) No\n";
 		cin >> z_aendern;
-		if(z_aendern == '1') {                                                                       
+		if(z_aendern == 1) {                                                                       
 			cout << "Wie vielte Bestellung moechten Sie aendern?\n";
 			cin >> x;
 			cout << "In welchem Zustand ist die " << x<<". Bestellung?\n";
