@@ -113,8 +113,11 @@ int main()																													// Anfang des Hauptprogramms
 			}
 			while(auswahl!=3);
 		}
-		else if(eingabe==3)																																
+		else if(eingabe==3)															//Passwort aendern																					
 		{
+			cout << "Bitte geben Sie das neue Passwort ein." << endl;
+			cin >> passwort;																																//Eingabe des neuen Passwortes
+			cout << "Das Passwort wurde geaendert." << endl;
 		}
 	}
 	while(eingabe!=4);
