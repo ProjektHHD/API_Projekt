@@ -44,7 +44,7 @@ int main ()
 		else if(Auswahl ==5) {
 			menge5+=menge;
 			preis=preis5*menge;	}
-			Gesamtpreis += preis;       //2.4.1           1. 2.4.1 -> 2. 2.4.2 ->BUG FIX
+			Gesamtpreis += preis;       //2.4.1           
 	}
 	while(Auswahl !=6); //2.2.1
 	
@@ -60,6 +60,7 @@ int main ()
 			cout << name4 << " " << menge4 << " Stueck"<<endl;}
 		if (menge5!=0){
 			cout << name5 << " " << menge5 << " Stueck"<<endl;} //2.2.2
+	cout<< "Gesamtpreis = "<<Gesamtpreis<<endl; //2.4.2
 
 	do {
         cout<< "Haben Sie alles richtig bestellt?(Y/N)" << endl;
