@@ -28,7 +28,7 @@ int main ()
 		cin >> Auswahl;
 		if (Auswahl !=6){
 		cout << "Wie viele moechten Sie davon kaufen?" << endl;
-		cin >> menge;}
+		cin >> menge;
 		if(Auswahl ==1) {
 			menge1+=menge;
 			preis=preis1*menge;}
@@ -44,7 +44,7 @@ int main ()
 		else if(Auswahl ==5) {
 			menge5+=menge;
 			preis=preis5*menge;	}
-			Gesamtpreis += preis;       //2.4.1           
+			Gesamtpreis += preis;}      //2.4.1           
 	}
 	while(Auswahl !=6); //2.2.1
 	
