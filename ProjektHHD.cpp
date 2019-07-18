@@ -3,13 +3,18 @@
 
 using namespace std;
 
+double preis_fkt (int Auswahl, int menge); 
+
+double preis1=1, preis2=1, preis3=1, preis4=1, preis5=1, preis, Gesamtpreis=0;
+int menge1=0, menge2=0, menge3=0, menge4=0, menge5=0;
+
 int main ()
 { int a,b,c,d,e;
 	
-	double preis1=1, preis2=1, preis3=1, preis4=1, preis5=1, preis, Gesamtpreis=0;
+	
 	char name1[20]={"essen1"}, name2[20]={"essen2"}, name3[20]={"essen3"}, name4[20]={"essen4"}, name5[20]={"essen5"};
 	int Auswahl, menge;
-	int menge1=0, menge2=0, menge3=0, menge4=0, menge5=0;
+	
 	
 	char choice='y';
 	
@@ -28,23 +33,8 @@ int main ()
 		cin >> Auswahl;
 		if (Auswahl !=6){
 		cout << "Wie viele moechten Sie davon kaufen?" << endl;
-		cin >> menge;
-		if(Auswahl ==1) {
-			menge1+=menge;
-			preis=preis1*menge;}
-		else if(Auswahl ==2){
-			menge2+=menge;
-			preis=preis2*menge;}
-		else if(Auswahl ==3) {
-			menge3+=menge;
-			preis=preis3*menge;}
-		else if(Auswahl ==4) {
-			menge4+=menge;
-			preis=preis4*menge;}
-		else if(Auswahl ==5) {
-			menge5+=menge;
-			preis=preis5*menge;	}
-			Gesamtpreis += preis;}      //2.4.1           
+		cin >> menge; 
+		preis_fkt (Auswahl, menge); }  //2.4.1           
 	}
 	while(Auswahl !=6); //2.2.1
 	
@@ -74,3 +64,23 @@ int main ()
 	return 0;
 }
 			
+double preis_fkt (int Auswahl, int menge)
+{
+	if(Auswahl ==1) {
+			menge1+=menge;
+			preis=preis1*menge;}
+		else if(Auswahl ==2){
+			menge2+=menge;
+			preis=preis2*menge;}
+		else if(Auswahl ==3) {
+			menge3+=menge;
+			preis=preis3*menge;}
+		else if(Auswahl ==4) {
+			menge4+=menge;
+			preis=preis4*menge;}
+		else if(Auswahl ==5) {
+			menge5+=menge;
+			preis=preis5*menge;	}
+			Gesamtpreis += preis; 
+		}
+
