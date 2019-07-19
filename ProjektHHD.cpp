@@ -2,6 +2,15 @@
 #include <iomanip>
 using namespace std;
 
+bool aktionstag=false;
+double rabatt(double eingabe)					//Funktion fuer Rabattaktionen
+{
+	if(aktionstag==true)
+	{return 0.8*eingabe;}
+	else
+	{return eingabe;}
+}
+
 class essen																																// Klassendeklaration
 {
 	private:
