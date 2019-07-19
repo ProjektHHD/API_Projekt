@@ -9,7 +9,11 @@ class bestellung {                            //Klass Definition
 		int zahl_essen4;
 		int zahl_essen5;
 		int zustand=1;
+	public : 
+		int nr;
+	
 	public :
+		void setzeBestellungsnummer (int ein);
 		void setzeStueckzahl1 (int ein);            //Methode
 		void setzeStueckzahl2 (int ein);
 		void setzeStueckzahl3 (int ein);
@@ -26,6 +30,8 @@ class bestellung {                            //Klass Definition
 };
 
 // Methodendefinition
+void bestellung:: setzeBestellungsnummer (int ein) {
+	this->nr = ein; }
 void bestellung:: setzeStueckzahl1 (int ein) {
 	this -> zahl_essen1=ein; }
 void bestellung:: setzeStueckzahl2 (int ein) {
@@ -53,7 +59,7 @@ void bestellung:: zustandAendern (int zustand) {       //Statusänderung Methode
 int bestellung::zeigZustand (void) {
 	return zustand;}
 void bestellung:: zeigListe(void) {            //Liste Zeigen Methode
-	cout <<zahl_essen1<<"*essen1,  "<< zahl_essen2<<"*essen2,  " <<zahl_essen3<<"*essen3,  "<<zahl_essen4<<"*essen4,  "<<zahl_essen5<<"*essen5"<< "   " << zustand<<endl; }
+	cout << nr<<"            "<<zahl_essen1<<"*essen1,  "<< zahl_essen2<<"*essen2,  " <<zahl_essen3<<"*essen3,  "<<zahl_essen4<<"*essen4,  "<<zahl_essen5<<"*essen5"<< "   " << zustand<<endl; }
 		
 int main (void) {
 	int a=3, b=4, c=2, d=1, e=5;	 // Bestellung Stückzahl werden von Kunde-Code bekommen. 
@@ -66,40 +72,45 @@ int main (void) {
 	Bestellung1.setzeStueckzahl3(1);
 	Bestellung1.setzeStueckzahl4(1);
 	Bestellung1.setzeStueckzahl5(1);
+	Bestellung1.setzeBestellungsnummer(111);            //Bestellungsnummer wird bei der Bestellung durch Automat aufgeteilt, damit Kunden ihre Bestellungen auf einem Blick erkennen können
 	
 	Bestellung2.setzeStueckzahl1(2);
 	Bestellung2.setzeStueckzahl2(2);
 	Bestellung2.setzeStueckzahl3(2);
 	Bestellung2.setzeStueckzahl4(2);
 	Bestellung2.setzeStueckzahl5(2);
+	Bestellung2.setzeBestellungsnummer(112);
 	
 	Bestellung3.setzeStueckzahl1(3);
 	Bestellung3.setzeStueckzahl2(3);
 	Bestellung3.setzeStueckzahl3(3);
 	Bestellung3.setzeStueckzahl4(3);
 	Bestellung3.setzeStueckzahl5(3);
+	Bestellung3.setzeBestellungsnummer(113);
 	
 	Bestellung4.setzeStueckzahl1(4);
 	Bestellung4.setzeStueckzahl2(4);
 	Bestellung4.setzeStueckzahl3(4);
 	Bestellung4.setzeStueckzahl4(4);
 	Bestellung4.setzeStueckzahl5(4);
+	Bestellung4.setzeBestellungsnummer(114);
 	
 	Bestellung5.setzeStueckzahl1(5);
 	Bestellung5.setzeStueckzahl2(5);
 	Bestellung5.setzeStueckzahl3(5);
 	Bestellung5.setzeStueckzahl4(5);
 	Bestellung5.setzeStueckzahl5(5);
+	Bestellung5.setzeBestellungsnummer(115);
 	
 	cout <<"\nBestellungszustand : " <<endl;            //Zustand
 	cout <<"(1) Bestellt  , (2) in Bearbeitung,  (0) Fertig! Abholbar \n";
 	cout << "\n<Bestellungsliste>\n";                             //Bestellungsliste
 	cout << "Bestellung     Stueckzahl                                             Zustand\n";
-	cout << "1.             "; Bestellung1.zeigListe();
-	cout << "2.             "; Bestellung2.zeigListe();
-	cout << "3.             "; Bestellung3.zeigListe();
-	cout << "4.             "; Bestellung4.zeigListe();
-	cout << "5.             "; Bestellung5.zeigListe();
+	Bestellung1.zeigListe();
+	Bestellung2.zeigListe();
+	Bestellung3.zeigListe();
+	Bestellung4.zeigListe();
+	Bestellung5.zeigListe();
 
 	do {
 		cout << "\nZustand aendern?\n";     //Zustandsänderung Schleife
@@ -117,11 +128,11 @@ int main (void) {
 			else if (x ==5) Bestellung5.zustandAendern(y);
 			cout << "\n<Bestellungsliste>\n";
 			cout << "Bestellung     Stueckzahl                                             Zustand\n";
-			cout << "1.             "; Bestellung1.zeigListe();
-			cout << "2.             "; Bestellung2.zeigListe();
-			cout << "3.             "; Bestellung3.zeigListe();
-			cout << "4.             "; Bestellung4.zeigListe();
-			cout << "5.             "; Bestellung5.zeigListe();
+			Bestellung1.zeigListe();
+			Bestellung2.zeigListe();
+			Bestellung3.zeigListe();
+			Bestellung4.zeigListe();
+			Bestellung5.zeigListe();
 			}	
 	}while(z_aendern !=2);        //Koch wird wieder gefragt, ob er noch einen anderen Zustand ändern will, bis er "nein" wählt.
 	
@@ -156,7 +167,12 @@ int main (void) {
 			j=Bestellung1.zeigZustand(); 
 			k=Bestellung2.zeigZustand();
 			Bestellung1.zustandAendern(k);
-			Bestellung2.zustandAendern(j);}
+			Bestellung2.zustandAendern(j);
+			
+			j=Bestellung1.nr;
+			k=Bestellung2.nr;
+			Bestellung1.nr = k;
+			Bestellung2.nr =j;}
 			
 		if(Bestellung2.zeigZustand() < Bestellung3.zeigZustand()) {        //Bestellung2<->Bestellung3
 			j=Bestellung2.zeigStueckzahl1(); 
@@ -187,7 +203,12 @@ int main (void) {
 			j=Bestellung2.zeigZustand(); 
 			k=Bestellung3.zeigZustand();
 			Bestellung2.zustandAendern(k);
-			Bestellung3.zustandAendern(j);}
+			Bestellung3.zustandAendern(j);
+			
+			j=Bestellung2.nr;
+			k=Bestellung3.nr;
+			Bestellung2.nr = k;
+			Bestellung3.nr =j;}
 			
 		if(Bestellung3.zeigZustand() < Bestellung4.zeigZustand()) {        //Bestellung3<->Bestellung4
 			j=Bestellung3.zeigStueckzahl1(); 
@@ -218,7 +239,12 @@ int main (void) {
 			j=Bestellung3.zeigZustand(); 
 			k=Bestellung4.zeigZustand();
 			Bestellung3.zustandAendern(k);
-			Bestellung4.zustandAendern(j);}
+			Bestellung4.zustandAendern(j);
+			
+			j=Bestellung3.nr;
+			k=Bestellung4.nr;
+			Bestellung3.nr = k;
+			Bestellung4.nr =j;}
 			
 		if(Bestellung4.zeigZustand() < Bestellung5.zeigZustand()) {        //Bestellung4<->Bestellung5
 			j=Bestellung4.zeigStueckzahl1(); 
@@ -249,18 +275,23 @@ int main (void) {
 			j=Bestellung4.zeigZustand(); 
 			k=Bestellung5.zeigZustand();
 			Bestellung4.zustandAendern(k);
-			Bestellung5.zustandAendern(j);}
+			Bestellung5.zustandAendern(j);
+			
+			j=Bestellung4.nr;
+			k=Bestellung5.nr;
+			Bestellung4.nr = k;
+			Bestellung5.nr =j;}
 		}
 	
 	cout << "\n<Bestellungsliste>\n";
 	cout << "Bestellung     Stueckzahl                                             Zustand\n";
-	cout << "1.             "; Bestellung1.zeigListe();
-	cout << "2.             "; Bestellung2.zeigListe();
-	cout << "3.             "; Bestellung3.zeigListe();
-	cout << "4.             "; Bestellung4.zeigListe();
-	cout << "5.             "; Bestellung5.zeigListe();
+	Bestellung1.zeigListe();
+	Bestellung2.zeigListe();
+	Bestellung3.zeigListe();
+	Bestellung4.zeigListe();
+	Bestellung5.zeigListe();
 	
-	if(Bestellung5.zeigZustand() == 0) {
+	if(Bestellung5.zeigZustand() == 0) {                       //bool funktion
 		if(Bestellung4.zeigZustand() == 0) {
 			if(Bestellung3.zeigZustand() == 0) {
 				if(Bestellung2.zeigZustand() == 0) {
@@ -272,41 +303,41 @@ int main (void) {
 					else {
 						cout << "\n<Bestellungsliste>\n";
 						cout << "Bestellung     Stueckzahl                                             Zustand\n";
-						cout << "1.             "; Bestellung1.zeigListe();
+						Bestellung1.zeigListe();
 					}
 				}
 				else {
 					cout << "\n<Bestellungsliste>\n";
 					cout << "Bestellung     Stueckzahl                                             Zustand\n";
-					cout << "1.             "; Bestellung1.zeigListe();
-					cout << "2.             "; Bestellung2.zeigListe();
+					Bestellung1.zeigListe();
+					Bestellung2.zeigListe();
 				}
 			}
 			else {
 				cout << "\n<Bestellungsliste>\n";
 				cout << "Bestellung     Stueckzahl                                             Zustand\n";
-				cout << "1.             "; Bestellung1.zeigListe();
-				cout << "2.             "; Bestellung2.zeigListe();
-				cout << "3.             "; Bestellung3.zeigListe();
+				Bestellung1.zeigListe();
+				Bestellung2.zeigListe();
+				Bestellung3.zeigListe();
 			}
 		}
 		else {
 			cout << "\n<Bestellungsliste>\n";
 			cout << "Bestellung     Stueckzahl                                             Zustand\n";
-			cout << "1.             "; Bestellung1.zeigListe();
-			cout << "2.             "; Bestellung2.zeigListe();
-			cout << "3.             "; Bestellung3.zeigListe();
-			cout << "4.             "; Bestellung4.zeigListe();
+			Bestellung1.zeigListe();
+			Bestellung2.zeigListe();
+			Bestellung3.zeigListe();
+			Bestellung4.zeigListe();
 		}
 	}
 	else {
 		cout << "\n<Bestellungsliste>\n";
 		cout << "Bestellung     Stueckzahl                                             Zustand\n";
-		cout << "1.             "; Bestellung1.zeigListe();
-		cout << "2.             "; Bestellung2.zeigListe();
-		cout << "3.             "; Bestellung3.zeigListe();
-		cout << "4.             "; Bestellung4.zeigListe();
-		cout << "5.             "; Bestellung5.zeigListe();	
+		Bestellung1.zeigListe();
+		Bestellung2.zeigListe();
+		Bestellung3.zeigListe();
+		Bestellung4.zeigListe();
+		Bestellung5.zeigListe();	
 	}
 	
 	return 0;
