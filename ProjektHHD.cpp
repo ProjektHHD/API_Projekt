@@ -49,7 +49,7 @@ int main()																													// Anfang des Hauptprogramms
 {
 	char passwort[100]={"passwort"}, passworteingabe[100];																	//Deklaration der Passwortsvariablen
 	bool passwortrichtig=true;
-	int eingabe, auswahl, auswahl2;
+	int eingabe, auswahl, auswahl2, auswahl3;
 	essen essen1, essen2, essen3, essen4, essen5;
 	do
 	{
@@ -72,7 +72,7 @@ int main()																													// Anfang des Hauptprogramms
 	do
 	{
 		cout << "Was wollen Sie tun?" << endl;
-		cout << "(1) Menue anzeigen\n(2) Menue bearbeiten\n(3) Passwort aendern\n(4) Beenden" << endl;			
+		cout << "(1) Menue anzeigen\n(2) Menue bearbeiten\n(3) Passwort aendern\n(4) Aktionstag einstellen\n(5) Beenden" << endl;			
 		cin >> eingabe;
 		if(eingabe==1)
 		{
@@ -143,8 +143,29 @@ int main()																													// Anfang des Hauptprogramms
 			cin >> passwort;												 		//Eingabe des neuen Passwortes
 			cout << "Das Passwort wurde geaendert." << endl;
 		}
+		else if(eingabe==4)
+		{
+			if(aktionstag==false)
+			{
+				cout << "Moechten Sie eine Rabattaktion aktivieren?" << endl << "(1) Ja, (2) Nein" << endl;
+				cin >> auswahl3;
+				if(auswahl3==1)
+				{
+					aktionstag=true;
+				}
+			}
+			else if(aktionstag==true)
+			{
+				cout << "Moechten Sie die Rabattaktion deaktivieren?" << endl << "(1) Ja, (2) Nein" << endl;
+				cin >> auswahl3;
+				if(auswahl3==1)
+				{
+					aktionstag=false;
+				}
+			}
+		}
 	}
-	while(eingabe!=4);
+	while(eingabe!=5);
 	
 	return 0;
 }
