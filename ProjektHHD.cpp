@@ -42,7 +42,7 @@ double essen::preisEin(void)
 
 double essen::preisAus(void)
 {
-	return preis;
+	return rabatt(preis); 
 }
 
 int main()																													// Anfang des Hauptprogramms			
@@ -143,7 +143,7 @@ int main()																													// Anfang des Hauptprogramms
 			cin >> passwort;												 		//Eingabe des neuen Passwortes
 			cout << "Das Passwort wurde geaendert." << endl;
 		}
-		else if(eingabe==4)
+		else if(eingabe==4)                          								//Rabattaktion aktivieren
 		{
 			if(aktionstag==false)
 			{
