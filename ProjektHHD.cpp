@@ -59,7 +59,7 @@ int main ()
 		
 }while (choice !='y' && choice!='Y');
 
-
+	cout << " Vielen Dank fuer Ihre Bestellung :) " << endl;
 
 	return 0;
 }
@@ -83,4 +83,5 @@ double preis_fkt (int Auswahl, int menge)
 			preis=preis5*menge;	}
 			Gesamtpreis += preis; 
 		}
+
 
