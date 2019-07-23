@@ -1,16 +1,17 @@
 #include <iostream>
 using namespace std;
 
-class bestellung {                            //Klass Definition
-	private : 
-		int zahl_essen[5];                          //Attribute
-		int zustand=1;
+//KLASSENDEFINITION
+class bestellung {
+	private : //Attribute
+		int zahl_essen[5]; // 5 verschiedene Essen werden auf ein Feld zahl_essen gespeichert.
+		int zustand=1; //Jedes Bestellung Objekt hat einen Zustandszahl.
 	public : 
-		int nr;
+		int nr; //Jedes Bestellung Objekt hat ein Bestellungsnummer als public Attribute.
 	
 	public :
 		void setzeBestellungsnummer (int ein);
-		void setzeStueckzahl (int index, int ein);            //Methode
+		void setzeStueckzahl (int index, int ein);
 		int zeigStueckzahl (int index);
 		void zustandAendern (int zustand);
 		int zeigZustand (void);
@@ -18,21 +19,26 @@ class bestellung {                            //Klass Definition
 		bestellung& operator=(bestellung& orig);
 };
 
-// Methodendefinition
-void bestellung:: setzeBestellungsnummer (int ein) {
+// METHODENDEFINITION
+void bestellung:: setzeBestellungsnummer (int ein) {//Bestellungsnummer setzen
 	this->nr = ein; }
-void bestellung:: setzeStueckzahl (int index, int ein) {
+void bestellung:: setzeStueckzahl (int index, int ein) {//Stueckzahl setzen
 	this -> zahl_essen[index]=ein; }
-int bestellung:: zeigStueckzahl (int index) {
+int bestellung:: zeigStueckzahl (int index) {//Stueckzahl zeigen
 	return zahl_essen[index]; }
 
-void bestellung:: zustandAendern (int zustand) {       //Statusänderung Methode
+void bestellung:: zustandAendern (int zustand) {//Status aendern
 	this-> zustand = zustand; }
-int bestellung::zeigZustand (void) {
+int bestellung::zeigZustand (void) {//Zustand zeigen
 	return zustand;}
-void bestellung:: zeigListe(void) {            //Liste Zeigen Methode
+void bestellung:: zeigListe(void) {//Liste zeigen
 	cout << nr<<"            "<<zahl_essen[0]<<"*essen1,  "<< zahl_essen[1]<<"*essen2,  " <<zahl_essen[2]<<"*essen3,  "<<zahl_essen[3]<<"*essen4,  "<<zahl_essen[4]<<"*essen5"<< "   " << zustand<<endl; }
 
+
+/*Diese Funktion ist eine überladene Zuweisungsoperatormethode, die das aufrufende Objekt mit einem anderen bestellung-Objekt gleichsetzen kann.
+Der Eingabeparameter ist eine Referenz mit dem Namen orig vom Datentyp bestellung, mit der das aufrufende Objekt gleichgesetzt werden soll.
+Der Ausgabeparameter ist das aufrufende bestellung-Objekt.
+Die Methode setzt alle Attribute des aufrufenden Objektes mit Attributen des eingegebenen Objektes orig gleich.*/
 bestellung& bestellung:: operator=(bestellung& orig) {
 	if(&orig != this) {
 		this->zustand = orig.zustand;
@@ -44,10 +50,11 @@ bestellung& bestellung:: operator=(bestellung& orig) {
 	return *this;
 }
 
+//HAUPTPROGRAMM
 int main (void) {
-	int x, y;  //Bei Zustandsänderung
+	int x, y;  //Bei Zustandsänderung x: wie vielte Bestellung, y: in welchem Zustand
 	int z_aendern;
-	bestellung Bestellung1, Bestellung2, Bestellung3, Bestellung4, Bestellung5;                  // Instanzierung Objekte
+	bestellung Bestellung1, Bestellung2, Bestellung3, Bestellung4, Bestellung5;// Instanzierung Objekte
 	
 	for( int i=0; i<5; i++) {                //Für TEST; alle Bestellungsstückzahl 1,2,3,4,5 setzen
 		Bestellung1.setzeStueckzahl(i,1);
@@ -57,32 +64,33 @@ int main (void) {
 		Bestellung5.setzeStueckzahl(i,5);
 	}
 	
-	Bestellung1.setzeBestellungsnummer(111);            //Bestellungsnummer wird bei der Bestellung durch Automat aufgeteilt, damit Kunden ihre Bestellungen auf einem Blick erkennen können
+	Bestellung1.setzeBestellungsnummer(111);//Bestellungsnummer wird bei der Bestellung durch Automat aufgeteilt, damit Kunden ihre Bestellungen auf einem Blick erkennen können
 	Bestellung2.setzeBestellungsnummer(112);
 	Bestellung3.setzeBestellungsnummer(113);
 	Bestellung4.setzeBestellungsnummer(114);
 	Bestellung5.setzeBestellungsnummer(115);
 	
-	cout <<"\nBestellungszustand : " <<endl;            //Zustand
+	cout <<"\nBestellungszustand : " <<endl;//Zustand
 	cout <<"(1) Bestellt  , (2) in Bearbeitung,  (0) Fertig! Abholbar \n";
-	cout << "\n<Bestellungsliste>\n";                             //Bestellungsliste
+	cout << "\n<Bestellungsliste>\n";//Bestellungsliste
 	cout << "Bestellung     Stueckzahl                                             Zustand\n";
 	Bestellung1.zeigListe();
 	Bestellung2.zeigListe();
 	Bestellung3.zeigListe();
 	Bestellung4.zeigListe();
 	Bestellung5.zeigListe();
-
+	
+	//Zustandsänderung Schleife
 	do {
-		cout << "\nZustand aendern?\n";     //Zustandsänderung Schleife
+		cout << "\nZustand aendern?\n";
 		cout << "(1) Yes         (2) No\n";
-		cin >> z_aendern;
+		cin >> z_aendern; // Wenn man den Zustand ändern will, drückt man 1, sonst 2.
 		if(z_aendern == 1) {                                                                       
 			cout << "Wie vielte Bestellung moechten Sie aendern?\n";
 			cin >> x;
 			cout << "In welchem Zustand ist die " << x<<". Bestellung?\n";
 			cin >> y;
-			if (x == 1) Bestellung1.zustandAendern(y);
+			if (x == 1) Bestellung1.zustandAendern(y); //Zustand ändern
 			else if (x ==2) Bestellung2.zustandAendern(y);
 			else if (x ==3) Bestellung3.zustandAendern(y);
 			else if (x ==4) Bestellung4.zustandAendern(y);
@@ -95,7 +103,7 @@ int main (void) {
 			Bestellung4.zeigListe();
 			Bestellung5.zeigListe();
 			}	
-	}while(z_aendern !=2);        //Koch wird wieder gefragt, ob er noch einen anderen Zustand ändern will, bis er "nein" wählt.
+	}while(z_aendern !=2); //Koch wird wieder gefragt, ob er noch einen anderen Zustand ändern will, bis er "nein" wählt.
 	
 	for(int i=0; i<5; i++) {
 		int j, k;
@@ -137,42 +145,46 @@ int main (void) {
 		if(Bestellung4.zeigZustand() == 0) {
 			if(Bestellung3.zeigZustand() == 0) {
 				if(Bestellung2.zeigZustand() == 0) {
-					if(Bestellung1.zeigZustand() == 0) {
+					if(Bestellung1.zeigZustand() == 0) {//Wenn alle Bestellungen fertig sind.
 						cout << "\n<Bestellungsliste>\n";
 						cout << "Bestellung     Stueckzahl                                             Zustand\n";
-						cout << "Alle Bestellungen sind FERTIG!" <<endl;
+						cout << "\nAlle Bestellungen sind ABHOLBAR!" <<endl;
 					}
-					else {
+					else {// Wenn alle Bestellungen außer 1 fertig sind.
 						cout << "\n<Bestellungsliste>\n";
 						cout << "Bestellung     Stueckzahl                                             Zustand\n";
 						Bestellung1.zeigListe();
+						cout << "\nBestellungsnummer "<< Bestellung2.nr<< ", "<< Bestellung3.nr<< ", "<< Bestellung4.nr<<", "<< Bestellung5.nr<< " sind ABHOLBAR!"<<endl;
 					}
 				}
-				else {
+				else {//Wenn Bestellung3,4,5 fertig sind.
 					cout << "\n<Bestellungsliste>\n";
 					cout << "Bestellung     Stueckzahl                                             Zustand\n";
 					Bestellung1.zeigListe();
 					Bestellung2.zeigListe();
+					cout << "\nBestellungsnummer "<< Bestellung3.nr<< ", "<< Bestellung4.nr<<", "<< Bestellung5.nr<< " sind ABHOLBAR!"<<endl;
 				}
 			}
-			else {
+			else {//Wenn Bestellung 4,5 fertig sind.
 				cout << "\n<Bestellungsliste>\n";
 				cout << "Bestellung     Stueckzahl                                             Zustand\n";
 				Bestellung1.zeigListe();
 				Bestellung2.zeigListe();
 				Bestellung3.zeigListe();
+				cout << "\nBestellungsnummer "<< Bestellung4.nr<<", "<< Bestellung5.nr<< " sind ABHOLBAR!"<<endl;
 			}
 		}
-		else {
+		else {//Wenn Bestellung 5 fertig ist.
 			cout << "\n<Bestellungsliste>\n";
 			cout << "Bestellung     Stueckzahl                                             Zustand\n";
 			Bestellung1.zeigListe();
 			Bestellung2.zeigListe();
 			Bestellung3.zeigListe();
 			Bestellung4.zeigListe();
+			cout << "\nBestellungsnummer "<< Bestellung5.nr<< " ist ABHOLBAR!"<<endl;
 		}
 	}
-	else {
+	else {//Wenn alle Bestellungen nicht fertig sind.
 		cout << "\n<Bestellungsliste>\n";
 		cout << "Bestellung     Stueckzahl                                             Zustand\n";
 		Bestellung1.zeigListe();
