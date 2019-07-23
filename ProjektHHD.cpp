@@ -15,6 +15,7 @@ class bestellung {                            //Klass Definition
 		void zustandAendern (int zustand);
 		int zeigZustand (void);
 		void zeigListe(void);
+		bestellung& operator=(bestellung& orig);
 };
 
 // Methodendefinition
@@ -32,6 +33,16 @@ int bestellung::zeigZustand (void) {
 void bestellung:: zeigListe(void) {            //Liste Zeigen Methode
 	cout << nr<<"            "<<zahl_essen[0]<<"*essen1,  "<< zahl_essen[1]<<"*essen2,  " <<zahl_essen[2]<<"*essen3,  "<<zahl_essen[3]<<"*essen4,  "<<zahl_essen[4]<<"*essen5"<< "   " << zustand<<endl; }
 
+bestellung& bestellung:: operator=(bestellung& orig) {
+	if(&orig != this) {
+		this->zustand = orig.zustand;
+		this->nr = orig.nr;
+		for(int i=0; i<5; i++) {
+			this->zahl_essen[i] = orig.zahl_essen[i];
+		}
+	}
+	return *this;
+}
 
 int main (void) {
 	int x, y;  //Bei Zustandsänderung
@@ -89,150 +100,30 @@ int main (void) {
 	for(int i=0; i<5; i++) {
 		int j, k;
 		if(Bestellung1.zeigZustand() < Bestellung2.zeigZustand()) {        //Bestellung1<->Bestellung2
-			j=Bestellung1.zeigStueckzahl(0);                                            //wenn Bestellungszustand von Bestellung2 höher als 1.
-			k=Bestellung2.zeigStueckzahl(0);                                           //Bestellung1 steht immer ganz vorne!!
-			Bestellung1.setzeStueckzahl(0,k);
-			Bestellung2.setzeStueckzahl(0,j);
-			
-			j=Bestellung1.zeigStueckzahl(1); 
-			k=Bestellung2.zeigStueckzahl(1);
-			Bestellung1.setzeStueckzahl(1,k);
-			Bestellung2.setzeStueckzahl(1,j);
-			
-			j=Bestellung1.zeigStueckzahl(2); 
-			k=Bestellung2.zeigStueckzahl(2);
-			Bestellung1.setzeStueckzahl(2,k);
-			Bestellung2.setzeStueckzahl(2,j);
-			
-			j=Bestellung1.zeigStueckzahl(3); 
-			k=Bestellung2.zeigStueckzahl(3);
-			Bestellung1.setzeStueckzahl(3,k);
-			Bestellung2.setzeStueckzahl(3,j);
-			
-			j=Bestellung1.zeigStueckzahl(4); 
-			k=Bestellung2.zeigStueckzahl(4);
-			Bestellung1.setzeStueckzahl(4,k);
-			Bestellung2.setzeStueckzahl(4,j);
-			
-			j=Bestellung1.zeigZustand(); 
-			k=Bestellung2.zeigZustand();
-			Bestellung1.zustandAendern(k);
-			Bestellung2.zustandAendern(j);
-			
-			j=Bestellung1.nr;
-			k=Bestellung2.nr;
-			Bestellung1.nr = k;
-			Bestellung2.nr =j;}
-			
-		if(Bestellung2.zeigZustand() < Bestellung3.zeigZustand()) {        //Bestellung2<->Bestellung3
-			j=Bestellung2.zeigStueckzahl(0);
-			k=Bestellung3.zeigStueckzahl(0);
-			Bestellung2.setzeStueckzahl(0,k);
-			Bestellung3.setzeStueckzahl(0,j);
-			
-			j=Bestellung2.zeigStueckzahl(1); 
-			k=Bestellung3.zeigStueckzahl(1);
-			Bestellung2.setzeStueckzahl(1,k);
-			Bestellung3.setzeStueckzahl(1,j);
-			
-			j=Bestellung2.zeigStueckzahl(2); 
-			k=Bestellung3.zeigStueckzahl(2);
-			Bestellung2.setzeStueckzahl(2,k);
-			Bestellung3.setzeStueckzahl(2,j);
-			
-			j=Bestellung2.zeigStueckzahl(3); 
-			k=Bestellung3.zeigStueckzahl(3);
-			Bestellung2.setzeStueckzahl(3,k);
-			Bestellung3.setzeStueckzahl(3,j);
-			
-			j=Bestellung2.zeigStueckzahl(4); 
-			k=Bestellung3.zeigStueckzahl(4);
-			Bestellung2.setzeStueckzahl(4,k);
-			Bestellung3.setzeStueckzahl(4,j);
-			
-			j=Bestellung2.zeigZustand(); 
-			k=Bestellung3.zeigZustand();
-			Bestellung2.zustandAendern(k);
-			Bestellung3.zustandAendern(j);
-			
-			j=Bestellung2.nr;
-			k=Bestellung3.nr;
-			Bestellung2.nr = k;
-			Bestellung3.nr =j;}
-			
-		if(Bestellung3.zeigZustand() < Bestellung4.zeigZustand()) {        //Bestellung3<->Bestellung4
-			j=Bestellung3.zeigStueckzahl(0);
-			k=Bestellung4.zeigStueckzahl(0);
-			Bestellung3.setzeStueckzahl(0,k);
-			Bestellung4.setzeStueckzahl(0,j);
-			
-			j=Bestellung3.zeigStueckzahl(1); 
-			k=Bestellung4.zeigStueckzahl(1);
-			Bestellung3.setzeStueckzahl(1,k);
-			Bestellung4.setzeStueckzahl(1,j);
-			
-			j=Bestellung3.zeigStueckzahl(2); 
-			k=Bestellung4.zeigStueckzahl(2);
-			Bestellung3.setzeStueckzahl(2,k);
-			Bestellung4.setzeStueckzahl(2,j);
-			
-			j=Bestellung3.zeigStueckzahl(3); 
-			k=Bestellung4.zeigStueckzahl(3);
-			Bestellung3.setzeStueckzahl(3,k);
-			Bestellung4.setzeStueckzahl(3,j);
-			
-			j=Bestellung3.zeigStueckzahl(4); 
-			k=Bestellung4.zeigStueckzahl(4);
-			Bestellung3.setzeStueckzahl(4,k);
-			Bestellung4.setzeStueckzahl(4,j);
-			
-			j=Bestellung3.zeigZustand(); 
-			k=Bestellung4.zeigZustand();
-			Bestellung3.zustandAendern(k);
-			Bestellung4.zustandAendern(j);
-			
-			j=Bestellung3.nr;
-			k=Bestellung4.nr;
-			Bestellung3.nr = k;
-			Bestellung4.nr =j;}
-			
-		if(Bestellung4.zeigZustand() < Bestellung5.zeigZustand()) {        //Bestellung4<->Bestellung5
-			j=Bestellung4.zeigStueckzahl(0);
-			k=Bestellung5.zeigStueckzahl(0);
-			Bestellung4.setzeStueckzahl(0,k);
-			Bestellung5.setzeStueckzahl(0,j);
-			
-			j=Bestellung4.zeigStueckzahl(1); 
-			k=Bestellung5.zeigStueckzahl(1);
-			Bestellung4.setzeStueckzahl(1,k);
-			Bestellung5.setzeStueckzahl(1,j);
-			
-			j=Bestellung4.zeigStueckzahl(2); 
-			k=Bestellung5.zeigStueckzahl(2);
-			Bestellung4.setzeStueckzahl(2,k);
-			Bestellung5.setzeStueckzahl(2,j);
-			
-			j=Bestellung4.zeigStueckzahl(3); 
-			k=Bestellung5.zeigStueckzahl(3);
-			Bestellung4.setzeStueckzahl(3,k);
-			Bestellung5.setzeStueckzahl(3,j);
-			
-			j=Bestellung4.zeigStueckzahl(4); 
-			k=Bestellung5.zeigStueckzahl(4);
-			Bestellung4.setzeStueckzahl(4,k);
-			Bestellung5.setzeStueckzahl(4,j);
-			
-			j=Bestellung4.zeigZustand(); 
-			k=Bestellung5.zeigZustand();
-			Bestellung4.zustandAendern(k);
-			Bestellung5.zustandAendern(j);
-			
-			j=Bestellung4.nr;
-			k=Bestellung5.nr;
-			Bestellung4.nr = k;
-			Bestellung5.nr =j;}
+			bestellung neu;                                                                      //wenn Bestellungszustand von Bestellung2 höher als 1.
+			neu = Bestellung1;                                           						//Bestellung1(mit einem höchsten Zustandsnummer) steht immer ganz vorne!!
+			Bestellung1 = Bestellung2;
+			Bestellung2 = neu;
 		}
-	
+		if(Bestellung2.zeigZustand() < Bestellung3.zeigZustand()) {        //Bestellung2<->Bestellung3
+			bestellung neu;
+			neu = Bestellung2;
+			Bestellung2 = Bestellung3;
+			Bestellung3 = neu;
+		}	
+		if(Bestellung3.zeigZustand() < Bestellung4.zeigZustand()) {        //Bestellung3<->Bestellung4
+			bestellung neu;
+			neu = Bestellung3;
+			Bestellung3 = Bestellung4;
+			Bestellung4 = neu;
+		}			
+		if(Bestellung4.zeigZustand() < Bestellung5.zeigZustand()) {        //Bestellung4<->Bestellung5
+			bestellung neu;
+			neu = Bestellung4;
+			Bestellung4 = Bestellung5;
+			Bestellung5 = neu;
+		}
+	}		
 	
 	cout << "\n<Bestellungsliste>\n";
 	cout << "Bestellung     Stueckzahl                                             Zustand\n";
