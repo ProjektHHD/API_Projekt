@@ -1,14 +1,14 @@
-#include <iostream>
-#include <iomanip>
+#include <iostream> 
+#include <iomanip>										//Ein- und Ausgabebibliothek
 
 using namespace std;
 
-double preis_fkt (int Auswahl, int menge); 
+double preis_fkt (int Auswahl, int menge);  // Preis Funktion
 
 double preis1=1, preis2=1, preis3=1, preis4=1, preis5=1, preis, Gesamtpreis=0;
 int menge1=0, menge2=0, menge3=0, menge4=0, menge5=0;
 
-int main ()
+int main ()													//Hauptfunktion
 { int a,b,c,d,e;
 	
 	
@@ -17,7 +17,7 @@ int main ()
 	
 	
 	char choice='y';
-	
+																																/*Das Menü wird ausgegeben*/
 	cout << "------------M E N U---------------" << endl;
 	cout <<fixed<<setprecision(2)<<"1. "<< preis1<<" Euro  "<<name1<< endl;
 	cout <<fixed<<setprecision(2)<<"2. "<< preis2<<" Euro  "<<name2<< endl;
@@ -29,17 +29,17 @@ int main ()
 	do{
 	do
 	{
-		cout << "Was moechten Sie bestellen?" << endl;
-		cin >> Auswahl;
+		cout << "Was moechten Sie bestellen?" << endl;							/*Der Kunde wird gefragt, was er bestellen will.*/
+		cin >> Auswahl; 													
 		if (Auswahl !=6){
-		cout << "Wie viele moechten Sie davon kaufen?" << endl;
-		cin >> menge; 
-		preis_fkt (Auswahl, menge); }  //2.4.1           
+		cout << "Wie viele moechten Sie davon kaufen?" << endl;			/*Die Stückzahl wird gefragt.*/
+		cin >> menge; 										
+		preis_fkt (Auswahl, menge); } 
 	}
-	while(Auswahl !=6); //2.2.1
+	while(Auswahl !=6); 
 	
 
-	cout << "Bestellte Produkte:" << endl;
+	cout << "Bestellte Produkte:" << endl;												/*Bestellte Speisen werden mit der Stückzahl angezeigt.*/
 		if (menge1 !=0){
 			cout << name1 << " " << menge1 << " Stueck"<<endl;}
 		if (menge2!=0){
@@ -49,22 +49,28 @@ int main ()
 		if (menge4!=0){
 			cout << name4 << " " << menge4 << " Stueck"<<endl;}
 		if (menge5!=0){
-			cout << name5 << " " << menge5 << " Stueck"<<endl;} //2.2.2
-	cout<< "Gesamtpreis = "<<Gesamtpreis<<endl; //2.4.2
+			cout << name5 << " " << menge5 << " Stueck"<<endl;} 
+	cout<< "Gesamtpreis = "<<Gesamtpreis<<endl; 								/*Der Gesamtpreis wird berechnet und angezeigt.*/
 
 	do {
         cout<< "Haben Sie alles richtig bestellt?(Y/N)" << endl;
         cin >> choice;
-	}while(choice !='y' && choice!='Y' && choice !='n' && choice!='N');
+	}while(choice !='y' && choice!='Y' && choice !='n' && choice!='N');		/*Es besteht die Wahl zwischen Y oder y und N oder n.*/
 		
-}while (choice !='y' && choice!='Y');
+}while (choice !='y' && choice!='Y');														/*Wenn N oder n eingegeben wird, wird das Programm immer wieder ausgeführt bis Y oder y eingegeben wird.
+																												Wenn Y oder y eingegeben wird, wird das Programm nicht wieder gelaufen und eine Aussage gegeben.*/
 
 	cout << " Vielen Dank fuer Ihre Bestellung :) " << endl;
 
 	return 0;
 }
-			
-double preis_fkt (int Auswahl, int menge)
+
+/*Die Funktion "Preis" bestimmt den tatsächlichen Gesamtpreis, je nachdem, was der Kunde bestellt hat.
+Die Eingabeparameter sind zwei int-werte, die Preis und Menge einer Speise bestimmen.
+Der Ausgabeparameter ist ein double-wert, der den Gesamtpreis der Bestellung bestimmt.
+Wenn eine Preisfunktion läuft, ist der richtige Gesamtpreis der Bestellung gegeben. */
+
+double preis_fkt (int Auswahl, int menge) 
 {
 	if(Auswahl ==1) {
 			menge1+=menge;
@@ -81,7 +87,9 @@ double preis_fkt (int Auswahl, int menge)
 		else if(Auswahl ==5) {
 			menge5+=menge;
 			preis=preis5*menge;	}
-			Gesamtpreis += preis; 
+			Gesamtpreis += preis;
+			return Gesamtpreis;
 		}
+
 
 
