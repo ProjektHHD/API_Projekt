@@ -21,8 +21,8 @@ double rabatt(double eingabe)		//Funktion fuer Rabattaktionen
 class essen			// Klassendeklaration
 {
 	private:
-	char name[100];
-	double preis;
+	char name[100]={0};
+	double preis=0;
 	public:
 	char* nameEin(void);
 	char* nameAus(void);
