@@ -259,7 +259,7 @@ int main() {														// Anfang des Hauptprogramms
 		menge1=0; menge2=0; menge3=0; menge4=0; menge5=0;
 		Gesamtpreis=0;
 																																/*Das Menü wird ausgegeben*/
-		cout << "\n------------M E N U---------------" << endl;
+		cout << "\n\n------------M E N U---------------" << endl;
 		cout <<fixed<<setprecision(2)<<"1. "<< essen1.preisAus()<<" Euro  "<<essen1.nameAus()<< endl;
 		cout <<fixed<<setprecision(2)<<"2. "<< essen2.preisAus()<<" Euro  "<<essen2.nameAus()<< endl;
 		cout <<fixed<<setprecision(2)<<"3. "<< essen3.preisAus()<<" Euro  "<<essen3.nameAus()<< endl;
@@ -281,22 +281,26 @@ int main() {														// Anfang des Hauptprogramms
 		
 			cout << "Bestellte Produkte:" << endl;												/*Bestellte Speisen werden mit der Stückzahl angezeigt.*/
 			if (menge1 !=0){
-				cout << name1 << " " << menge1 << " Stueck"<<endl;}
+				cout << essen1.nameAus() << " " << menge1 << " Stueck"<<endl;}
 			if (menge2!=0){
-				cout << name2 << " " << menge2 << " Stueck"<<endl;}
+				cout << essen2.nameAus() << " " << menge2 << " Stueck"<<endl;}
 			if (menge3!=0){
-				cout << name3 << " " << menge3 << " Stueck"<<endl;}
+				cout << essen3.nameAus() << " " << menge3 << " Stueck"<<endl;}
 			if (menge4!=0){
-				cout << name4 << " " << menge4 << " Stueck"<<endl;}
+				cout << essen4.nameAus() << " " << menge4 << " Stueck"<<endl;}
 			if (menge5!=0){
-			cout << name5 << " " << menge5 << " Stueck"<<endl;} 
+			cout << essen5.nameAus() << " " << menge5 << " Stueck"<<endl;} 
 			cout<< "Gesamtpreis = "<<Gesamtpreis<<" Euro"<<endl; 								/*Der Gesamtpreis wird berechnet und angezeigt.*/
 
 			do {
-				cout<< "Haben Sie alles richtig bestellt?(Y/N)" << endl;
+				cout<< "\nHaben Sie alles richtig bestellt?(Y/N)" << endl;
 				cin >> choice;
 			}while(choice !='y' && choice!='Y' && choice !='n' && choice!='N');		/*Es besteht die Wahl zwischen Y oder y und N oder n.*/
 			
+			if(choice =='N' || choice=='n') {                                                          /*Bestellung wird gelöscht, wenn man N oder n drückt.*/
+				menge1=0; menge2=0; menge3=0; menge4=0; menge5=0;
+				Gesamtpreis=0;
+			}
 		}while (choice !='y' && choice!='Y');														/*Wenn N oder n eingegeben wird, wird das Programm immer wieder ausgeführt bis Y oder y eingegeben wird.
 																													Wenn Y oder y eingegeben wird, wird das Programm nicht wieder gelaufen und eine Aussage gegeben.*/
 		cout << " Vielen Dank fuer Ihre Bestellung :) " << endl;
@@ -439,5 +443,10 @@ int main() {														// Anfang des Hauptprogramms
 		Bestellung[3].zeigListe();
 		Bestellung[4].zeigListe();
 	}
+	int beenden = 0;
+	do {
+		cout<< "\n(1) Beenden?\n";
+		cin>>beenden;
+	}while(beenden!=1);
 	return 0;
 }
